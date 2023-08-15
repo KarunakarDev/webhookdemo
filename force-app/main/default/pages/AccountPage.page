@@ -1,0 +1,15 @@
+<apex:page standardController="Account" renderAs="pdf">
+    <apex:form > 
+        <apex:pageblock >
+           <apex:pageblockSection >
+               <apex:outputField value="{!Account.Name}"/>
+               <apex:outputField value="{!Account.Phone}"/> 
+               <apex:outputField value="{!Account.isActive__c}"/>        
+           </apex:pageblockSection>
+                      
+           <apex:pageblockButtons >
+               <apex:commandButton value="saveAccount" action="{!save}"/>
+           </apex:pageblockButtons>
+        </apex:pageblock>
+    </apex:form>    
+</apex:page>

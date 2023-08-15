@@ -1,0 +1,27 @@
+<template>
+    <lightning-card>
+        <div class="slds-card__body_inner">
+            <template if:true={product}>
+                <lightning-tile label="" href="" type="">
+                    <div><b>{productName}</b></div>
+                    <div><img src={my_image} height="100px" width="100px"/></div>
+                    <div><b>Item# </b> {itemNumber} </div>
+                    <div><b>Brand </b> {brand} </div>
+                    <div><b>Available Inventory </b>{availbleInventory}</div>
+                    <div><lightning-formatted-number value={price} format-style="currency" currency-code="USD">
+                    </lightning-formatted-number></div>
+            
+                    <div><lightning-button label="-" title="dec" onclick={handleIncrement}></lightning-button>
+                    {Qty}
+                   <lightning-button label="+" title="inc" onclick={handleDecrement}></lightning-button>
+                    </div>
+
+                    <div><lightning-button variant="success" label="ADD TO CART" title="ADD TO CART"
+                        onclick={handleAddToCart}>
+                    </lightning-button>
+                    </div>
+                </lightning-tile>
+            </template>
+        </div>
+    </lightning-card>
+</template>

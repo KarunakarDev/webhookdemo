@@ -1,0 +1,47 @@
+<template>
+    <lightning-card  variant="base"  title="Quiz App in LWC">
+        <div class="slds-m-around_medium">
+            <template if:true={isSubmitted}>
+            <div>You have Scored {correctAnswers} out of {myQuestions.length}</div>
+            </template>
+            <form>
+            <template for:each={myQuestions} for:item="quiz">
+                <div key={quiz.id} class="slds-m-bottom_medium">
+                    <div><strong>{quiz.id} - {quiz.Que}</strong></div>
+                    <div class="slds-grid slds-gutters slds-p-bottom_medium">
+                        <div class="slds-col slds-m-bottom_medium" >
+                            <input type="radio" name={quiz.id} value="a" onchange={changeHandler}/>
+                            {quiz.answer.a}
+                        </div>
+                       <div class="slds-col slds-m-bottom_medium">
+                            <input type="radio" name={quiz.id} value="b" onchange={changeHandler}/>
+                            {quiz.answer.b}
+                        </div>
+                        <div class="slds-col slds-m-bottom_medium">
+                            <input type="radio" name={quiz.id} value="c" onchange={changeHandler}/>
+                            {quiz.answer.c}
+                        </div>
+                    </div>
+                </div>
+            </template>
+            <lightning-button 
+            variant="brand" 
+            type = "submit" 
+            label="Submit" 
+            title="Submit Quiz" 
+            onclick={submitHandler} 
+            class="slds-m-around_small"
+            disabled={allNotSelected}>
+            </lightning-button>
+            <lightning-button 
+            variant="brand" 
+            type = "reset" 
+            label="Reset" 
+            title="Reset" 
+            onclick={resetHandler} 
+            class="slds-m-around_small">
+            </lightning-button>
+            </form>
+        </div>
+    </lightning-card>
+</template>
