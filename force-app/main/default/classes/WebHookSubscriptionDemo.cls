@@ -33,6 +33,12 @@ global with sharing class WebHookSubscriptionDemo {
         }
     }
 
+    @HttpGet
+    global static String doGet() {
+        return '{"message":"Hello from Webhook Service!!"}';
+    }
+
+
     public class Pusher{
         public String name;
         public String email;
