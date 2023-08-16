@@ -7,7 +7,7 @@ global with sharing class WebHookSubscriptionDemo {
             RestRequest req = RestContext.request;
             RestResponse res = RestContext.response;
 
-            System.debug('Print request body >>>>'+ req.requestBody);
+            System.debug('Print request body >>>>>'+ req.requestBody);
             //String hashedVal = req.headers.get('x-Hub-Signature-256');
             //Blob bBody = req.requestBody;
 
